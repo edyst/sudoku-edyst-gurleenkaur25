@@ -1,26 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku</title>
-    <link rel="icon" sizes="192x192" href="https://pbs.twimg.com/profile_images/1047734344327077888/fB9vXLeW_400x400.jpg">
-    <link rel="stylesheet" href="style.css">
-    <script src="sudoku.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="setup">
-        <div class="level">
-            <button class="gameLevel" id="easyLevel" onClick="changeDifficultyLevel(1)">Easy</button>
-            <button class="gameLevel" id="mediumLevel" onClick="changeDifficultyLevel(2)">Medium</button>
-            <button class="gameLevel" id="hardLevel" onClick="changeDifficultyLevel(3)">Hard</button>
-        </div>
+
+    <h2 style="font-size:40px; margin-top: 0px;">Sudoku</h2>
+
+    <div class="Menu">
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
     </div>
-    <div class="game">
-        <div id="board" class="gameBoard"></div>       
+    <div class="sudokuBox">
+        <table>
+
+            <tr class="row1">
+                <td class="column1"><input data-box="1" data-row="1" data-column="1" type="text" maxlength="1"/></td>
+                <td class="column2"><input data-box="1" data-row="1" data-column="2" type="text" maxlength="1"/></td>
+                <td class="column3"><input data-box="1" data-row="1" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="2" data-row="1" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="2" data-row="1" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="2" data-row="1" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="3" data-row="1" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="3" data-row="1" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="3" data-row="1" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row2">
+                <td class="column1"><input data-box="1" data-row="2" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="1" data-row="2" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="1" data-row="2" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="2" data-row="2" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="2" data-row="2" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="2" data-row="2" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="3" data-row="2" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="3" data-row="2" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="3" data-row="2" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row3">
+                <td class="column1"><input data-box="1" data-row="3" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="1" data-row="3" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="1" data-row="3" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="2" data-row="3" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="2" data-row="3" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="2" data-row="3" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="3" data-row="3" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="3" data-row="3" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="3" data-row="3" data-column="9" type="text" maxlength="1" /></td>
+            </tr
+            
+            ><tr class="row4">
+                <td class="column1"><input data-box="4" data-row="4" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="4" data-row="4" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="4" data-row="4" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="5" data-row="4" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="5" data-row="4" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="5" data-row="4" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="6" data-row="4" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="6" data-row="4" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="6" data-row="4" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row5">
+                <td class="column1"><input data-box="4" data-row="5" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="4" data-row="5" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="4" data-row="5" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="5" data-row="5" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="5" data-row="5" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="5" data-row="5" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="6" data-row="5" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="6" data-row="5" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="6" data-row="5" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row6">
+                <td class="column1"><input data-box="4" data-row="6" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="4" data-row="6" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="4" data-row="6" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="5" data-row="6" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="5" data-row="6" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="5" data-row="6" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="6" data-row="6" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="6" data-row="6" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="6" data-row="6" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row7">
+                <td class="column1"><input data-box="7" data-row="7" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="7" data-row="7" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="7" data-row="7" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="8" data-row="7" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="8" data-row="7" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="8" data-row="7" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="9" data-row="7" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="9" data-row="7" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="9" data-row="7" data-column="9" type="text" maxlength="1" /></td>
+            </tr> 
+            
+            <tr class="row8">
+                <td class="column1"><input data-box="7" data-row="8" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="7" data-row="8" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="7" data-row="8" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="8" data-row="8" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="8" data-row="8" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="8" data-row="8" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="9" data-row="8" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="9" data-row="8" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="9" data-row="8" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            <tr class="row9">
+                <td class="column1"><input data-box="7" data-row="9" data-column="1" type="text" maxlength="1" /></td>
+                <td class="column2"><input data-box="7" data-row="9" data-column="2" type="text" maxlength="1" /></td>
+                <td class="column3"><input data-box="7" data-row="9" data-column="3" type="text" maxlength="1" /></td>
+                <td class="column4"><input data-box="8" data-row="9" data-column="4" type="text" maxlength="1" /></td>
+                <td class="column5"><input data-box="8" data-row="9" data-column="5" type="text" maxlength="1" /></td>
+                <td class="column6"><input data-box="8" data-row="9" data-column="6" type="text" maxlength="1" /></td>
+                <td class="column7"><input data-box="9" data-row="9" data-column="7" type="text" maxlength="1" /></td>
+                <td class="column8"><input data-box="9" data-row="9" data-column="8" type="text" maxlength="1" /></td>
+                <td class="column9"><input data-box="9" data-row="9" data-column="9" type="text" maxlength="1" /></td>
+            </tr>
+            
+            
+        </table>
     </div>
-    <div class="validate">
-        <button class="val" onClick="validateGame()">Validate</button>
-        <button class="res" onClick="resetGame()">Reset</button>
-        </div>
+    <button id="validatebtn">Validate</button>
+    <script src="script.js"></script>
 </body>
 </html>
